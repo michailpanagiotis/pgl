@@ -261,7 +261,7 @@ public:
     {
         assert(m_densityTree);
         m_auxNode = u;
-        while( (!u.isRoot()) && (!affordsElementErasureAt(m_auxNode)))
+        while( (!m_auxNode.isRoot()) && (!affordsElementErasureAt(m_auxNode)))
         {
             m_auxNode.goUp();
         }

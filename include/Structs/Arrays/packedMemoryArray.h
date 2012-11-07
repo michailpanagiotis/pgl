@@ -662,6 +662,9 @@ private:
     {
         assert( isPowerOf2( m_poolSize));
         //std::cout << "Pool size is " << m_poolSize << ", Bucket size is " << m_bucketSize << "\n";
+        
+        while (m_poolSize < m_bucketSize) m_bucketSize >>=1; 
+
         m_bucketMask = ~(m_bucketSize - 1);
         assert( m_bucketSize);
         m_pool = new dataType[ m_poolSize];
